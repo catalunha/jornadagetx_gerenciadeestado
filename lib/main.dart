@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jornadagetx_gerenciadeestado/basico/basico_reatividade_page.dart';
 import 'package:jornadagetx_gerenciadeestado/home_page.dart';
 
 void main() {
@@ -16,6 +17,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/',
           page: () => const HomePage(),
+        ),
+        GetPage(
+          name: '/basico_reatividade',
+          page: () => BasicoReatividadePage(),
         ),
       ],
     );
