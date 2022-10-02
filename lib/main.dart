@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
                   //ordem é se delay, super.onInit();
                   // page.build
                   // controller.onInit
-                  //ordem é se super.onInit();, delay
+                  //ordem é se super.onInit(); delay
                   // page.build
                   // controller.onReady
                   // controller.onInit
