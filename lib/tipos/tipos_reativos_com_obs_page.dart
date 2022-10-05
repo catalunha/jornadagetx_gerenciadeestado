@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jornadagetx_gerenciadeestado/tipos/model/aluno_model.dart';
 
 class TiposReativosComObsPage extends StatelessWidget {
   final varString = 'Msg Qq'.obs;
@@ -15,7 +14,6 @@ class TiposReativosComObsPage extends StatelessWidget {
     'a': 'a1',
     'b': 'b1',
   }.obs;
-  final alunoModel = AlunoModel(nome: 'alunoA').obs;
 
   TiposReativosComObsPage({Key? key}) : super(key: key);
 
@@ -23,7 +21,7 @@ class TiposReativosComObsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tipos reativos genericos'),
+        title: const Text('Tipos reativos com obs'),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -86,9 +84,22 @@ class TiposReativosComObsPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 varList.add('c');
-                varList.refresh();
               },
-              child: const Text('Change List'),
+              child: const Text('Change1 List'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                var temp = ['a', 'b'];
+                varList(temp);
+              },
+              child: const Text('Change2 List'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                var temp = ['a', 'b'];
+                varList.value = temp;
+              },
+              child: const Text('Change3 List'),
             ),
             Obx(() => Column(
                   children: varMap.entries
@@ -97,31 +108,23 @@ class TiposReativosComObsPage extends StatelessWidget {
                 )),
             ElevatedButton(
               onPressed: () {
-                varMap['a'] = 'a12';
-                varMap.refresh();
+                varMap['c'] = 'c1';
               },
-              child: const Text('Change Map'),
-            ),
-            Obx(() => Text('alunoModel: ${alunoModel.value.nome}')),
-            ElevatedButton(
-              onPressed: () {
-                alunoModel.value.nome = 'alunoB';
-                alunoModel.refresh();
-              },
-              child: const Text('Change campo AlunoModel'),
+              child: const Text('Change1 Map'),
             ),
             ElevatedButton(
               onPressed: () {
-                alunoModel.value = AlunoModel(nome: 'alunoC');
-                alunoModel.refresh();
+                var temp = {'a': 'a1', 'b': 'b1'};
+                varMap(temp);
               },
-              child: const Text('Change1 todo AlunoModel'),
+              child: const Text('Change2 Map'),
             ),
             ElevatedButton(
               onPressed: () {
-                alunoModel(AlunoModel(nome: 'alunoD'));
+                var temp = {'a': 'a1', 'b': 'b1'};
+                varMap.value = temp;
               },
-              child: const Text('Change2 todo AlunoModel'),
+              child: const Text('Change3 Map'),
             ),
           ]),
         ),

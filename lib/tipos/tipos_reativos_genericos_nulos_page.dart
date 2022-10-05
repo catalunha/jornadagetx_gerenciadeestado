@@ -17,7 +17,7 @@ class TiposReativosGenericosNulosPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tipos reativos genericos'),
+        title: const Text('Tipos reativos genericos nulos'),
       ),
       body: Center(
         child: SingleChildScrollView(

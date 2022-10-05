@@ -3,17 +3,17 @@ import 'package:jornadagetx_gerenciadeestado/tipos/model/aluno2_model.dart';
 import 'package:jornadagetx_gerenciadeestado/tipos/model/aluno_model.dart';
 import 'package:get/get.dart';
 
-class AtualizacaoObjetosPage extends StatelessWidget {
+class TiposReativosComObjetosPage extends StatelessWidget {
   final alunoModel = AlunoModel(nome: 'a').obs;
   final aluno2Model = Rxn<Aluno2Model>();
 
-  AtualizacaoObjetosPage({Key? key}) : super(key: key);
+  TiposReativosComObjetosPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Atualização Objetos'),
+        title: const Text('Tipos Reativos Com Objetos'),
       ),
       body: Center(
         child: Column(
@@ -52,29 +52,29 @@ class AtualizacaoObjetosPage extends StatelessWidget {
             Obx(() => Text('Aluno2Model.nome ${aluno2Model.value?.nome}')),
             // ElevatedButton(
             //   onPressed: () {
-            //     //nao pode set direto pq nome é final
-            //     alunoModel.value.nome = 'b';
-            //     alunoModel.refresh();
+            //     //Nao pode usar set direto pq nome é final
+            //     aluno2Model.value.nome = 'b';
+            //     aluno2Model.refresh();
             //   },
             //   child: const Text('Change with refresh'),
             // ),
-
-            ElevatedButton(
-              onPressed: () {
-                aluno2Model(Aluno2Model(nome: 'd'));
-              },
-              child: const Text('Change with () //Pois tem q criar era null'),
-            ),
             ElevatedButton(
               onPressed: () {
                 aluno2Model.value = aluno2Model.value?.copyWith(nome: 'c');
               },
               child: const Text('Change with copyWith'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                aluno2Model(Aluno2Model(nome: 'd'));
+              },
+              child: const Text('Change with () //Pois tem q criar era null'),
+            ),
+
             // ElevatedButton(
             //   onPressed: () {
-            //     //  nao pode update pq nome é final
-            //     alunoModel.update((val) {
+            //     //  Nao pode usar update pq nome é final
+            //     aluno2Model.update((val) {
             //       val?.nome = 'e';
             //     });
             //   },

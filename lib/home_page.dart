@@ -47,9 +47,9 @@ class HomePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Get.toNamed('/atualizacao_objetos');
+                  Get.toNamed('/tipos_reativos_com_objetos');
                 },
-                child: const Text('Atualizacao Objetos'),
+                child: const Text('Tipos Reativos Com Objetos'),
               ),
               ElevatedButton(
                 onPressed: () {

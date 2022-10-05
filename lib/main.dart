@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jornadagetx_gerenciadeestado/atualizacao/atualizacao_objetos_page.dart';
+import 'package:jornadagetx_gerenciadeestado/tipos/tipos_reativos_com_objetos_page.dart';
 import 'package:jornadagetx_gerenciadeestado/basico/basico_reatividade_page.dart';
 import 'package:jornadagetx_gerenciadeestado/controllers/controllers_home_page.dart';
 import 'package:jornadagetx_gerenciadeestado/controllers/getx_widget/getx_widget_page.dart';
@@ -56,8 +56,8 @@ class MyApp extends StatelessWidget {
           page: () => TiposReativosComObsPage(),
         ),
         GetPage(
-          name: '/atualizacao_objetos',
-          page: () => AtualizacaoObjetosPage(),
+          name: '/tipos_reativos_com_objetos',
+          page: () => TiposReativosComObjetosPage(),
         ),
         GetPage(
             name: '/controllers',
